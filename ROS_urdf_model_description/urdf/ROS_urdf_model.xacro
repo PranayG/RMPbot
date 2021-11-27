@@ -1,0 +1,138 @@
+<?xml version="1.0" ?>
+<robot name="ROS_urdf_model" xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+<xacro:include filename="$(find ROS_urdf_model_description)/urdf/materials.xacro" />
+<xacro:include filename="$(find ROS_urdf_model_description)/urdf/ROS_urdf_model.trans" />
+<xacro:include filename="$(find ROS_urdf_model_description)/urdf/ROS_urdf_model.gazebo" />
+<link name="base_link">
+  <inertial>
+    <origin rpy="0 0 0" xyz="-0.007993797844687926 -6.445626853258027e-05 0.03733982089504857"/>
+    <mass value="0.3917130898872576"/>
+    <inertia ixx="0.00033" ixy="0.0" ixz="6.2e-05" iyy="0.000755" iyz="-0.0" izz="0.000977"/>
+  </inertial>
+  <visual>
+    <origin rpy="0 0 0" xyz="0 0 0"/>
+    <geometry>
+      <mesh filename="package://ROS_urdf_model_description/meshes/base_link.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="0 0 0"/>
+    <geometry>
+      <mesh filename="package://ROS_urdf_model_description/meshes/base_link.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="r_wheel_1_1">
+  <inertial>
+    <origin rpy="0 0 0" xyz="-5.42546823925627e-08 -0.010000000000000002 5.5154309772098564e-08"/>
+    <mass value="0.06045221165837054"/>
+    <inertia ixx="1.8e-05" ixy="-0.0" ixz="-0.0" iyy="3.1e-05" iyz="0.0" izz="1.8e-05"/>
+  </inertial>
+  <visual>
+    <origin rpy="0 0 0" xyz="0.04 0.055 -0.032502"/>
+    <geometry>
+      <mesh filename="package://ROS_urdf_model_description/meshes/r_wheel_1_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="0.04 0.055 -0.032502"/>
+    <geometry>
+      <mesh filename="package://ROS_urdf_model_description/meshes/r_wheel_1_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="l_wheel_1_1">
+  <inertial>
+    <origin rpy="0 0 0" xyz="-1.3877787807814457e-17 0.010000000000000002 -6.938893903907228e-18"/>
+    <mass value="0.06045221165837055"/>
+    <inertia ixx="1.8e-05" ixy="0.0" ixz="-0.0" iyy="3.1e-05" iyz="0.0" izz="1.8e-05"/>
+  </inertial>
+  <visual>
+    <origin rpy="0 0 0" xyz="0.04 -0.055 -0.0325"/>
+    <geometry>
+      <mesh filename="package://ROS_urdf_model_description/meshes/l_wheel_1_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="0.04 -0.055 -0.0325"/>
+    <geometry>
+      <mesh filename="package://ROS_urdf_model_description/meshes/l_wheel_1_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="Lidar_1_1">
+  <inertial>
+    <origin rpy="0 0 0" xyz="1.2790781041965849e-07 3.0647606140187956e-18 0.004898635646193403"/>
+    <mass value="0.03060325191184998"/>
+    <inertia ixx="6e-06" ixy="0.0" ixz="-0.0" iyy="6e-06" iyz="0.0" izz="1.1e-05"/>
+  </inertial>
+  <visual>
+    <origin rpy="0 0 0" xyz="0.040656 -0.0 -0.0725"/>
+    <geometry>
+      <mesh filename="package://ROS_urdf_model_description/meshes/Lidar_1_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="0.040656 -0.0 -0.0725"/>
+    <geometry>
+      <mesh filename="package://ROS_urdf_model_description/meshes/Lidar_1_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="caster_1_1">
+  <inertial>
+    <origin rpy="0 0 0" xyz="-0.01999999999999999 2.0599841277224584e-18 -0.009841942175861375"/>
+    <mass value="0.05786195857967422"/>
+    <inertia ixx="4e-06" ixy="0.0" ixz="0.0" iyy="4e-06" iyz="0.0" izz="3e-06"/>
+  </inertial>
+  <visual>
+    <origin rpy="0 0 0" xyz="-0.071 0.0005 -0.0225"/>
+    <geometry>
+      <mesh filename="package://ROS_urdf_model_description/meshes/caster_1_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="-0.071 0.0005 -0.0225"/>
+    <geometry>
+      <mesh filename="package://ROS_urdf_model_description/meshes/caster_1_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<joint name="Rev8" type="continuous">
+  <origin rpy="0 0 0" xyz="-0.04 -0.055 0.032502"/>
+  <parent link="base_link"/>
+  <child link="r_wheel_1_1"/>
+  <axis xyz="0.0 1.0 0.0"/>
+</joint>
+
+<joint name="Rev9" type="continuous">
+  <origin rpy="0 0 0" xyz="-0.04 0.055 0.0325"/>
+  <parent link="base_link"/>
+  <child link="l_wheel_1_1"/>
+  <axis xyz="0.0 1.0 0.0"/>
+</joint>
+
+<joint name="Rigid10" type="fixed">
+  <origin rpy="0 0 0" xyz="-0.040656 0.0 0.0725"/>
+  <parent link="base_link"/>
+  <child link="Lidar_1_1"/>
+</joint>
+
+<joint name="Rigid11" type="fixed">
+  <origin rpy="0 0 0" xyz="0.071 -0.0005 0.0225"/>
+  <parent link="base_link"/>
+  <child link="caster_1_1"/>
+</joint>
+
+</robot>
